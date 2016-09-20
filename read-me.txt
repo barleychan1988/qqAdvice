@@ -1,10 +1,10 @@
 ##description
 v0.1.1
-Ìí¼ÓÒÀÀµ²å¼þcordova-plugin-extension
+ÃŒÃ­Â¼Ã“Ã’Ã€Ã€ÂµÂ²Ã¥Â¼Ã¾cordova-plugin-extension
 
 ##usage
 
 cordova.exec(function(ok){}, function(err){},
-                         "ExtraInfo",
+                         "QQAdvice",
                          "openQQ",
-                         [¡¯2276696999¡¯]);
+                         [Â¡Â¯2276696999Â¡Â¯]);
