@@ -1,0 +1,10 @@
+##description
+v0.1.1
+ÃÌº”“¿¿µ≤Âº˛cordova-plugin-extension
+
+##usage
+
+cordova.exec(function(ok){}, function(err){},
+                         "ExtraInfo",
+                         "openQQ",
+                         [°Ø2276696999°Ø]);

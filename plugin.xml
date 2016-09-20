@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+  id="com.zwchen.qqAdvice"
+  version="0.2.3">
+
+  <name>QQAdvice</name>
+  <description>这是一个可以打开手机QQ并打开指定QQ号进行咨询聊天的插件</description>
+  <keywords>cordova,QQAdvice,zwchen</keywords>
+  
+  <!--require cordova version -->
+  <engines>
+    <engine name="cordova" version=">=3.5.0" />
+    
+  </engines>
+
+  <!-- js module-->
+  <js-module src="www/QQAdvice.js" name="QQAdvice">
+    <clobbers target="navigator.QQAdvice" />
+  </js-module>
+  
+  <dependency id="cordova-plugin-extension" />
+  
+  <!-- android -->
+  <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="QQAdvice">
+              <param name="android-package" value="com.zwchen.qqAdvice.QQAdvice"/>
+          </feature>
+      </config-file>
+      <source-file src="src/android/QQAdvice.java" target-dir="src/com/zwchen/qqAdvice"/>
+  </platform>
+  
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="QQAdvice">
+          <param name="ios-package" value="QQAdvice"/>
+     </feature>
+   </config-file>
+    
+    <header-file src="src/ios/QQAdvice.h" />
+    <source-file src="src/ios/QQAdvice.m" />
+    
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLName</key>
+                <string>tentcentopenapi</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>tencent1105693226</string>
+                </array>
+            </dict>
+        </array>
+    </config-file>
+    
+    <!--allow non-HTTPS traffic -->
+    <config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
+    </config-file>
+    
+    <!--scheme query whitlist-->
+    <config-file platform="ios" target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <array>
+            <string>mqqwpa</string>
+        </array>
+    </config-file>
+    
+    <framework src="src/ios/TencentOpenAPI.framework" custom="true" />
+    <resource-file src="src/ios/TencentOpenApi_IOS_Bundle.bundle" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="Security.framework" />
+    <framework src="libiconv.dylib" />
+    <framework src="libsqlite3.dylib" />
+    <framework src="libstdc++.dylib" />
+    <framework src="libz.dylib" />
+    
+  </platform>  
+  
+</plugin>

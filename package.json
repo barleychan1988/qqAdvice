@@ -1,0 +1,28 @@
+{
+  "name": "com.zwchen.qqAdvice",
+  "version": "0.2.3",
+  "description": "这个一个可以打开手机QQ进行咨询的插件",
+  "cordova": {
+    "id": "com.zwchen.qqAdvice",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "qqAdvice",
+    "zwchen",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "author": "chenzw",
+  "license": "ISC"
+}
